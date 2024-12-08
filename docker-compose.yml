@@ -1,0 +1,34 @@
+
+services:
+  api-microservicio:
+    container_name: api-microservicio
+    image: api-microservicio:v1
+    build:
+      context: .
+    ports: 
+      - "3001:3001"
+    networks:
+      - api-networks
+
+  api-microservicio-2:
+    container_name: api-microservicio-2
+    image: api-microservicio:v1
+    build:
+      context: .
+    ports: 
+      - "3002:3001"
+    networks:
+      - api-networks
+
+  load-balancer:
+    container_name: load-balancer
+    image: load-balancer:v1
+    build:
+      context: ./balancer
+    ports:
+      - "5000:80"
+    networks:
+      - api-networks
+
+networks:
+  api-networks:
