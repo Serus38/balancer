@@ -9,6 +9,8 @@ services:
       - "3001:3001"
     networks:
       - api-networks
+    environment:
+      - MONGO-URI: ${MONGO-URI}
 
   api-microservicio-2:
     container_name: api-microservicio-2
@@ -29,8 +31,7 @@ services:
       - "5000:80"
     networks:
       - api-networks
-    environment:
-      - MONGO-URI: ${MONGO-URI}
+    
 
 networks:
   api-networks:

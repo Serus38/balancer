@@ -1,20 +1,20 @@
-version: '3.7'
-services:
-  jenkins:
-    build: 
-      context: .
-    ports:
-      - "8081:8080"
-    volumes:
-      - jenkins_home:/var/jenkins_home
-      - /var/run/docker.sock:/var/run/docker.sock
-    user: root
-    restart: always
-    networks:
-      - autenticacion-app
+# version: '3.7'
+# services:
+#   jenkins:
+#     build: 
+#       context: .
+#     ports:
+#       - "8081:8080"
+#     volumes:
+#       - jenkins_home:/var/jenkins_home
+#       - /var/run/docker.sock:/var/run/docker.sock
+#     user: root
+#     restart: always
+#     networks:
+#       - autenticacion-app
 
-volumes:
-  jenkins_home:
+# volumes:
+#   jenkins_home:
 
-networks:
-  autenticacion-app:
+# networks:
+#   autenticacion-app:
